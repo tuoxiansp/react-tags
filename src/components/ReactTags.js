@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { DragDropContext } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
 import isEqual from 'lodash/isEqual';
 import noop from 'lodash/noop';
 import uniq from 'lodash/uniq';
@@ -121,7 +119,7 @@ class ReactTags extends Component {
 
   componentDidMount() {
     const { autofocus, readOnly } = this.props;
-    
+
     if (autofocus && !readOnly) {
       this.resetAndFocusInput();
     }
@@ -203,7 +201,7 @@ class ReactTags extends Component {
           ? suggestions.length - 1
           : selectedIndex,
     });
-  }
+  };
 
   handleFocus(e) {
     const value = e.target.value;
@@ -476,7 +474,6 @@ class ReactTags extends Component {
 }
 
 module.exports = {
-  WithContext: DragDropContext(HTML5Backend)(ReactTags),
   WithOutContext: ReactTags,
   KEYS: KEYS,
 };
